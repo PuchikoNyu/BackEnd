@@ -1,0 +1,54 @@
+class User {
+    constructor (name, surname, books, pets) {
+        this.name = name;
+        this.surname = surname;
+        this.books = books;
+        this.pets = pets
+    }
+
+    getFullName () {
+        console.log(`Usuario Registrado: ${this.name} ${this.surname}.`);
+    }
+
+    addPet (pet) {
+        this.pets.push(pet);
+    }
+
+    getPetNames () {
+        console.log(`Listado de mascotas del Usuario ${this.name} ${this.surname}: ${this.pets.map((pet) => pet)}.`)
+    }
+
+    countPets () {
+        console.log(`Mascotas del Usuario ${this.name} ${this.surname}: ${this.pets.length}.`)
+    }
+
+    addBook (book, author) {
+        this.books.push( {name: book , author: author} )
+    }
+
+    getBookNames () {
+        console.log(`Listado de Libros del Usuario ${this.name} ${this.surname}: ${this.books.map((book) => book.name)}.`)
+    }
+}
+
+let userOne = new User ("Paul", "Jhonson", [], [])
+userOne.addBook("El Caballero de la Armadura Oxidada", "Robert Fisher")
+userOne.addBook("Orgullo y Prejuicio ", "Jane Austen")
+userOne.addPet("Shakespeare")
+userOne.addPet("Apolo")
+userOne.addPet("Socrates")
+userOne.getFullName()
+userOne.countPets()
+userOne.getPetNames()
+userOne.getBookNames()
+
+let userTwo = new User ("Patricia", "Rodriguez", [], [])
+userTwo.addBook("Coaching Ontológico Profesional", "Oscar Anzorena")
+userTwo.addBook("El Quinto Acuerdo", "José Ruiz y Miguel Ángel Ruiz Macías")
+userTwo.addBook("Los Cuatro Acuerdos", "Miguel Ángel Ruiz Macías")
+userTwo.addPet("Pancho")
+userTwo.addPet("Chancho")
+userTwo.getFullName()
+userTwo.countPets()
+userTwo.getPetNames()
+userTwo.getBookNames()
